@@ -1,9 +1,9 @@
 {
-  "name": "bootstrap-social",
+  "name": "home",
   "main": [
-    "bootstrap-social.css",
-    "bootstrap-social.less",
-    "bootstrap-social.scss"
+    "STB18.css",
+    "STB18.less",
+    "SBTB.scss"
   ],
   "license": "MIT",
   "ignore": [

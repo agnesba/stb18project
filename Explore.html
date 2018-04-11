@@ -12,15 +12,20 @@
 <body>
   <nav class="navbar navbar-expand-md bg-primary navbar-dark">
     <div class="container">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
       <a class="navbar-brand" href="Home.html">STB18</a>
       <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
         <ul class="navbar-nav">
-          <li class="nav-item" id="feed">
-            <a class="nav-link active" href="Home.html" target="">Home</a>
+          <li class="nav-item">
+            <a class="nav-link active" href="Home.html">Home</a>
           </li>
-          <li class="nav-item" id="feed">
-            <a class="nav-link active" href="Feed.html" target="">Feed</a>
+          <li class="nav-item">
+            <a class="nav-link active" href="Feed.html">Feed</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="Hashtags.html">Hashtags</a>
           </li>
         </ul>
       </div>
@@ -30,26 +35,8 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h1 class="text-center display-3 text-primary">What is STB18</h1>
-          <p class="">STB18 is on online platform designed for users by users.
-            <br>The aim is to filter and collect relevant tweets in Korean with the correct English translations. The websites aims to redirect the experience on Twitter onto a specialised platform where the main information will reach clear and sound. By
-            filtering the tweets and categorizing them the website will elimate some of the issues inherent to the other platforms such as mistranslations, fake and general oversaturation of information.&nbsp;
-            <br>Dedicated to BTS the platform will keep you uptodate with the latest tweets and make it easier to search and follow hashtags</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <h2 class="text-center">BTS</h2>
-        </div>
-        <div class="col-md-4">
-          <h2 class="text-center">bts_bighit</h2>
-        </div>
-        <div class="col-md-4">
-          <h2 class="text-center">BigHitEnt</h2>
+          <h1 class="text-center display-3 text-primary">Explore</h1>
+          <p class="text-primary text-center text-lowercase border border-primary w-100 py-0">this is your chance to explore the different hashtags both in Koren and English giving you the chance to learn more about BTS</p>
         </div>
       </div>
     </div>
@@ -57,79 +44,106 @@
   <div class="py-5">
     <div class="container">
       <div class="row">
-        <div class="col-md-4">
-          <a class="twitter-timeline" href="https://twitter.com/BTS_twt?ref_src=twsrc%5Etfw" data-height="400" data-link-color="#0033ab" data-theme="light" data-width="300">Tweets by BTS_twt</a>
-          <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <div class="col-md-4 text-center">
+          <h4 class="">Search Hashtags in English</h4>
         </div>
         <div class="col-md-4">
-          <a class="twitter-timeline" href="https://twitter.com/bts_bighit?ref_src=twsrc%5Etfw" data-height="400" data-link-color="#0033ab" data-theme="light" data-width="300">Tweets by bts_bighit</a>
-          <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
-        <div class="col-md-4">
-          <a class="twitter-timeline" href="https://twitter.com/BigHitEnt?ref_src=twsrc%5Etfw" data-height="400" data-link-color="#0033ab" data-theme="light" data-width="300">Tweets by BigHitEnt</a>
-          <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          <h2 class="text-center">BTS Translations</h2>
-        </div>
-        <div class="col-md-4">
-          <h2 class="text-center">BTS</h2>
-        </div>
-        <div class="col-md-4">
-          <h2 class="text-center">BTS</h2>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          <a class="twitter-timeline" data-width="300" data-height="400" data-theme="light" data-link-color="#0033ab" href="https://twitter.com/BTS_Trans?ref_src=twsrc%5Etfw">Tweets by BTS_Trans</a>
-          <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
-        <div class="col-md-4">
-          <a class="twitter-timeline" data-width="300" data-height="400" data-theme="light" data-link-color="#0033ab" href="https://twitter.com/BTSARMY_Salon?ref_src=twsrc%5Etfw">Tweets by BTSARMY_Salon</a>
-          <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
-        <div class="col-md-4">
-          <a class="twitter-timeline" data-width="300" data-height="400" data-theme="light" data-link-color="#0033ab" href="https://twitter.com/vlissful?ref_src=twsrc%5Etfw">Tweets by vlissful</a>
-          <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <input type="search" id="mySearch" name="english" placeholder="Search the Korean English" class="w-100"> </div>
+        <div class="col-md-4 text-left">
+          <button class="bg-primary">Search</button>
         </div>
       </div>
     </div>
-    <div class="py-5 bg-dark text-white">
+  </div>
+  <div class="py-5">
+    <div class="container">
       <div class="row">
-        <div class="col-md-9">
-          <p class="lead">Enter your email to get the latest update</p>
-          <form class="form-inline">
-            <div class="form-group">
-              <input type="email" class="form-control" placeholder="Your e-mail here"> </div>
-            <button type="submit" class="btn btn-primary ml-3">Subscribe</button>
-          </form>
+        <div class="col-md-4 text-center">
+          <h4 class="">Search Hashtags in Korean</h4>
         </div>
-        <div class="col-4 col-md-1 align-self-center">
-          <a href="https://www.facebook.com" target="_blank"><i class="fa fa-fw fa-facebook fa-3x text-white"></i></a>
-        </div>
-        <div class="col-4 col-md-1 align-self-center">
-          <a href="https://twitter.com" target="_blank"><i class="fa fa-fw fa-twitter fa-3x text-white"></i></a>
-        </div>
-        <div class="col-4 col-md-1 align-self-center">
-          <a href="https://www.instagram.com" target="_blank"><i class="fa fa-fw fa-instagram text-white fa-3x"></i></a>
+        <div class="col-md-4">
+          <input type="search" id="mySearchtwo" name="korean" placeholder="Search the Korean Hashtags" class="w-100"> </div>
+        <div class="col-md-4 text-left">
+          <button class="bg-primary">Search</button>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h4 class="" contenteditable="true">Search Date</h4>
+        </div>
+        <div class="w-100 col-md-4">
+          <input type="date" id="myDate" draggable="true"> </div>
+        <div class="col-md-4">
+          <button onclick="myFunction()" class="bg-primary">Search</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <h4 class="" contenteditable="true">Search User</h4>
+        </div>
+        <div class="col-md-4 w-100">
+          <input type="search" id="mySearchthree" name="user" placeholder="Insert the username"> </div>
+        <div class="col-md-4 text-left">
+          <button class="bg-primary">Search</button>
+        </div>
+      </div>
+    </div>
+    <div class="py-5">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 mt-3 text-center">
-            <p>© Copyright 2018 STB18 - All rights reserved.</p>
+          <div class="col-md-6"> </div>
+          <div class="col-md-6"> </div>
+        </div>
+      </div>
+      <div class="py-5 bg-dark text-white">
+        <div class="row">
+          <div class="col-md-9">
+            <p class="lead">Enter your email to get the latest update</p>
+            <form class="form-inline">
+              <div class="form-group">
+                <input type="email" class="form-control" placeholder="Your e-mail here"> </div>
+              <button type="submit" class="btn btn-primary ml-3">Subscribe</button>
+            </form>
+          </div>
+          <div class="col-4 col-md-1 align-self-center">
+            <a href="https://www.facebook.com" target="_blank">
+              <i class="fa fa-fw fa-facebook fa-3x text-white"></i>
+            </a>
+          </div>
+          <div class="col-4 col-md-1 align-self-center">
+            <a href="https://twitter.com" target="_blank">
+              <i class="fa fa-fw fa-twitter fa-3x text-white"></i>
+            </a>
+          </div>
+          <div class="col-4 col-md-1 align-self-center">
+            <a href="https://www.instagram.com" target="_blank">
+              <i class="fa fa-fw fa-instagram text-white fa-3x"></i>
+            </a>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 mt-3 text-center">
+              <p>© Copyright 2018 STB18 - All rights reserved.</p>
+            </div>
           </div>
         </div>
       </div>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 10px;right:10px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:180px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo&nbsp;&nbsp;
+        <img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16">
+      </pingendo>
     </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 10px;right:10px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:180px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo&nbsp;&nbsp;
-      <img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16">
-    </pingendo>
   </div>
 </body>
 

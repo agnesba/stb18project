@@ -16,7 +16,65 @@ include_once("inc/twitteroauth.php");
   <title>Login</title>
   <link rel="stylesheet" href="STB18.css">
   <link rel="stylesheet" href="STB18.css"> </head>
+<style type="text/css">
+            .wrapper {
+                width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
 
+            .welcome_txt {
+                margin: 20px;
+                background-color: #EBEBEB;
+                padding: 10px;
+                border: #D6D6D6 solid 1px;
+                -moz-border-radius: 5px;
+                -webkit-border-radius: 5px;
+                border-radius: 5px;
+            }
+
+            .tweet_box {
+                margin: 20px;
+                background-color: #FFF0DD;
+                padding: 10px;
+                border: #F7CFCF solid 1px;
+                -moz-border-radius: 5px;
+                -webkit-border-radius: 5px;
+                border-radius: 5px;
+            }
+
+            .tweet_box textarea {
+                width: 500px;
+                border: #F7CFCF solid 1px;
+                -moz-border-radius: 5px;
+                -webkit-border-radius: 5px;
+                border-radius: 5px;
+            }
+
+            .tweet_list {
+                margin: 20px;
+                padding: 20px;
+                background-color: #E2FFF9;
+                border: #CBECCE solid 1px;
+                -moz-border-radius: 5px;
+                -webkit-border-radius: 5px;
+                border-radius: 5px;
+            }
+
+            .tweet_list ul {
+                padding: 0px;
+                font-family: verdana;
+                font-size: 12px;
+                color: #5C5C5C;
+            }
+
+            .tweet_list li {
+                border-bottom: silver dashed 1px;
+                list-style: none;
+                padding: 5px;
+            }
+
+        </style>
 <body>
   <nav class="navbar navbar-expand-md bg-primary navbar-dark">
     <div class="container">
@@ -47,76 +105,54 @@ include_once("inc/twitteroauth.php");
       </div>
     </div>
   </div>
-  <div class="py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="row">
-            <div class="form">
-              <ul class="tab-group">
-                <li class="tab active">
-                  <a href="#signup">Sign Up</a>
-                </li>
-                <li class="tab">
-                  <a href="#login">Log In</a>
-                </li>
-              </ul>
-              <div class="tab-content">
-                <div id="signup">
-                  <h1>Sign Up for Free</h1>
-                  <form action="/" method="post">
-                    <div class="top-row">
-                      <div class="field-wrap">
-                        <label> First Name
-                          <span class="req">*</span>
-                        </label>
-                        <input type="text" required="" autocomplete="off"> </div>
-                      <div class="field-wrap">
-                        <label> Last Name
-                          <span class="req">*</span>
-                        </label>
-                        <input type="text" required="" autocomplete="off"> </div>
-                    </div>
-                    <div class="field-wrap">
-                      <label> Email Address
-                        <span class="req">*</span>
-                      </label>
-                      <input type="email" required="" autocomplete="off"> </div>
-                    <div class="field-wrap">
-                      <label> Set A Password
-                        <span class="req">*</span>
-                      </label>
-                      <input type="password" required="" autocomplete="off"> </div>
-                    <button type="submit" class="button button-block">Get Started</button>
-                  </form>
-                </div>
-                <div id="login">
-                  <h1>Welcome Back!</h1>
-                  <form action="/" method="post">
-                    <div class="field-wrap">
-                      <label> Email Address
-                        <span class="req">*</span>
-                      </label>
-                      <input type="email" required="" autocomplete="off"> </div>
-                    <div class="field-wrap">
-                      <label> Password
-                        <span class="req">*</span>
-                      </label>
-                      <input type="password" required="" autocomplete="off"> </div>
-                    <p class="forgot">
-                      <a href="#">Forgot Password?</a>
-                    </p>
-                    <button class="button button-block">Log In</button>
-                  </form>
-                </div>
-              </div>
-              <!-- tab-content -->
-            </div>
-            <!-- /form -->
-            <div class="col-md-12"> </div>
-          </div>
-        </div>
-        <div class="col-md-6">
+<?php
+	if(isset($_SESSION['status']) && $_SESSION['status'] == 'verified') 
+	{
+		//Retrive variables
+		$screen_name 		= $_SESSION['request_vars']['screen_name'];
+		$twitter_id			= $_SESSION['request_vars']['user_id'];
+		$oauth_token 		= $_SESSION['request_vars']['oauth_token'];
+		$oauth_token_secret = $_SESSION['request_vars']['oauth_token_secret'];
+	
+		//Show welcome message
+		echo '<div class="welcome_txt">Welcome <strong>'.$screen_name.'</strong> (Twitter ID : '.$twitter_id.'). <a href="logout.php?logout">Logout</a>!</div>';
+		$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $oauth_token, $oauth_token_secret);
+		
+		//If user wants to tweet using form.
+		if(isset($_POST["updateme"])) 
+		{
+			//Post text to twitter
+			$my_update = $connection->post('statuses/update', array('status' => $_POST["updateme"]));
+			die('<script type="text/javascript">window.top.location="index.php"</script>'); //redirect back to index.php
+		}
+		
+		//show tweet form
+		echo '<div class="tweet_box">';
+		echo '<form method="post" action="index.php"><table width="200" border="0" cellpadding="3">';
+		echo '<tr>';
+		echo '<td><textarea name="updateme" cols="60" rows="4"></textarea></td>';
+		echo '</tr>';
+		echo '<tr>';
+		echo '<td><input type="submit" value="Tweet" /></td>';
+		echo '</tr></table></form>';
+		echo '</div>';
+		
+		//Get latest tweets
+		$my_tweets = $connection->get('statuses/user_timeline', array('screen_name' => $screen_name, 'count' => 5));
+		
+		echo '<div class="tweet_list"><strong>Latest Tweets : </strong>';
+		echo '<ul>';
+		foreach ($my_tweets  as $my_tweet) {
+			echo '<li>'.$my_tweet->text.' <br />-<i>'.$my_tweet->created_at.'</i></li>';
+		}
+		echo '</ul></div>';
+			
+	}else{
+		//Display login button
+		echo '<a href="process.php"><img src="images/twitter.png"/></a>';
+        
+	}
+?>  <div class="col-md-6">
           <div class="card text-white p-5 bg-primary">
             <div class="card-body">
               <h1 class="mb-4">Login form</h1>
@@ -132,10 +168,7 @@ include_once("inc/twitteroauth.php");
             </div>
           </div>
         </div>
-      </div>
       <div class="col-md-6"> </div>
-    </div>
-  </div>
   <div class="py-5 bg-dark text-white">
     <div class="container">
       <div class="row">

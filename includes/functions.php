@@ -5,7 +5,7 @@ class Users {
 	function __construct(){
 		//Database configuration
 		$dbServer = 'localhost'; //Define database server host
-		$dbUsername = 'root'; //Define database username
+		$dbUsername = 'root@localhost'; //Define database username
 		$dbPassword = 'bottTAEJIN1809'; //Define database password
 		$dbName = 'twitterlogin'; //Define database name
 		
